@@ -1,0 +1,5 @@
+I1,shampoo,12-05-2016 03:30,100.00,english,12-06-2016 14:00,sinaSeller
+I2,sib,12-05-2016 19:00,100.00,japanese,24-05-2016 01:00,LowSeller
+I3,iphone,12-05-2016 10:00,2700.0,english,23-05-2016 08:00,Sina
+I4,Lumia 520,24-05-2016 23:00,9999.0,vickrey,25-05-2016 07:00,Sina
+I5,football boots,24-05-2016 3:30,270.0,japanese,25-05-2016 20:00,Sina
