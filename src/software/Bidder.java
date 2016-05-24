@@ -42,7 +42,7 @@ public class Bidder {
         Date now = new Date();
         String dateNow = df.format(now);
         //System.out.println(auctionStartDate);
-        if(dateNow.compareTo(auctionStartDate) < 0){
+        if(dateNow.compareTo(auctionStartDate) > 0){
             System.out.println("You have successfully entered this auction. \nAuction beginning time: " + auctionStartDate);
             this.canEnterAuction = true;
         }
@@ -52,7 +52,7 @@ public class Bidder {
                 canEnterAuction = false;
             }
             else{
-                if(dateNow.compareTo(deadline) < 0){
+                if(dateNow.compareTo(deadline) > 0){
                     System.out.println("You have entered this auction. \nThe auction has already begun, but you can still set a bid now.");
                     canEnterAuction = true;
                 }
@@ -68,7 +68,7 @@ public class Bidder {
         if(this.canEnterAuction){
             try{
                 PrintWriter write = new PrintWriter(new FileOutputStream("bidder.txt", true));
-                write.println(this.bidderID + "," + itemID + "," + bidAmount);
+                write.println(this.bidderID + "," + itemID.toUpperCase() + "," + bidAmount);
                 write.close();
             }
             catch(IOException e){

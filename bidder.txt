@@ -6,3 +6,4 @@ karim,I1,20.0
 arjav,I4,32.0
 gani,I2,50.0
 ishrak,I3,400.0
+tt,I2,32.0
