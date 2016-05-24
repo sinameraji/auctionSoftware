@@ -183,15 +183,12 @@ public class tester {
                                 
                                 System.out.println("input the ID of the item");
                                 String itemID = input.nextLine();
-                                
-                                System.out.println("Enter bidding price: ");
-                                double bidAmount = input.nextDouble();
-//                                input.nextLine();
-//                                System.out.print("Date and time bid: ");
-//                                Date date = new Date();
-//                                String biddingDate = dateFormat.format(date);
                                 newBidder.enterAuction(itemID);
-                                newBidder.bid(itemID, bidAmount);//bidder class
+                                if(newBidder.canEnterAuction){
+                                    System.out.println("Enter bidding price: ");
+                                    double bidAmount = input.nextDouble();
+                                    newBidder.bid(itemID, bidAmount);//bidder class
+                                }
                                 break;
                                 
                             case 3:

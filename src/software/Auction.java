@@ -1,11 +1,8 @@
-package software;
-import java.io.*;
-import java.util.Scanner;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
-/**
- *
- * @author Sina
- */
+import java.util.Scanner;
+
 public class Auction {
     private String itemName;
     protected String auctionType = "";

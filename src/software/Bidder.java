@@ -22,7 +22,7 @@ public class Bidder {
     }
     
     public void enterAuction(String itemID){ 
-        String auctionType = null, auctionStartDate = null, deadline = null;
+        String auctionType = "", auctionStartDate = null, deadline = null;
         try{
             Scanner read = new Scanner(new FileInputStream("seller.txt"));
             while(read.hasNextLine()){
@@ -38,11 +38,11 @@ public class Bidder {
         catch(IOException e){
             System.out.println("File not found.");
         }
-        DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        DateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm");
         Date now = new Date();
         String dateNow = df.format(now);
         //System.out.println(auctionStartDate);
-        if(dateNow.compareTo(auctionStartDate) > 0){
+        if(dateNow.compareTo(auctionStartDate) <= 0){
             System.out.println("You have successfully entered this auction. \nAuction beginning time: " + auctionStartDate);
             this.canEnterAuction = true;
         }
@@ -51,18 +51,17 @@ public class Bidder {
                 System.out.println("Sorry! You should be more punctual to enter a Japanese auction :) ");
                 canEnterAuction = false;
             }
-            else{
-                if(dateNow.compareTo(deadline) > 0){
+            if(dateNow.compareTo(deadline) < 0 && !auctionType.equalsIgnoreCase("japanese")){
                     System.out.println("You have entered this auction. \nThe auction has already begun, but you can still set a bid now.");
                     canEnterAuction = true;
-                }
-                else{
+            }
+            else{
                     System.out.println("You were late! Auction is over.");
                     canEnterAuction = false;
-                }
             }
-        }   
-    }
+        }
+    }   
+    
     
     public void bid(String itemID, double bidAmount){
         if(this.canEnterAuction){
