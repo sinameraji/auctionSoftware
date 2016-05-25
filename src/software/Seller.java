@@ -159,29 +159,30 @@ public class Seller {
         ArrayList<String[]> bidsForItem = new ArrayList<>();
         
         for(int i = 0; i < allItems.size(); i++){
-            for(int j = 0; j < allItems.get(i).length; j++){
-                if(allItems.get(i)[allItems.get(i).length - 1].equalsIgnoreCase(sellerID)){
+            if(allItems.get(i)[allItems.get(i).length - 1].equalsIgnoreCase(sellerID)){
                     sellerItems.add(allItems.get(i)[0]);
                 }
-            }
+//            for(int j = 0; j < allItems.get(i).length; j++){
+//                
+//            }
         }
         System.out.println("You have " + sellerItems.size() + " items for sale.");
         int bidCount = 0;
-        for(int i = 0; i < bids.size(); i++){
-            for(int j = 0; j < bids.get(i).length; j++){
-                for(int k = 0; k < sellerItems.size(); k++){
-                    if(bids.get(i)[1].equalsIgnoreCase(sellerItems.get(k))){
-                        bidCount++;
-                        bidsForItem.add(bids.get(i));
-                    }
+        for(int j = 0; j < sellerItems.size(); j++){
+            for(int i = 0; i < bids.size(); i++){
+                if(bids.get(i)[1].equalsIgnoreCase(sellerItems.get(j))){
+                    bidCount++;
+                    bidsForItem.add(bids.get(i));
                 }
             }
         }
+        
         System.out.println(bidCount + " bids have been submitted for your items.");
         for(int i = 0; i < bidsForItem.size(); i++){
             for(int j = 0; j < bidsForItem.get(i).length; j++){
                 System.out.print(bidsForItem.get(i)[j] + "\t");
             }
+            System.out.println();
         }
     }
     
@@ -217,6 +218,22 @@ public class Seller {
             System.out.println("File not found.");
         }
         return lineCount;    
+    }
+
+    public void display(String sellerID) {
+        ArrayList<String[]> allItems = newArray("seller.txt");
+        ArrayList<String[]> sellerItems = new ArrayList<>();
+        for(int i = 0; i < allItems.size(); i++){
+            if(allItems.get(i)[allItems.get(i).length - 1].equalsIgnoreCase(sellerID)){
+                    sellerItems.add(allItems.get(i));
+                }
+        }
+        for(int i = 0; i < sellerItems.size(); i++){
+            for(int j = 0; j < sellerItems.get(i).length; j++){
+                System.out.print(sellerItems.get(i)[j]);
+            }
+            System.out.println("");
+        }
     }
 }
     

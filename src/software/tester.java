@@ -130,7 +130,7 @@ public class tester {
                                 break;
                                 
                             case 3:
-                                Seller.display();
+                                newSeller.display(newSeller.sellerID);
                                 System.out.println("");
                                 System.out.print("enter no of line you wish to delete: ");
                                 num = input.nextInt();
@@ -138,7 +138,7 @@ public class tester {
                                 break;
                                 
                             case 4:
-                                Seller.display();
+                                newSeller.display(newSeller.sellerID);
                                 break;
                                 
                             case 5:

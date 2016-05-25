@@ -1,7 +1,4 @@
 full name,username,password
 a123,Ahamad,1234
-sinam,Sina,1373
-sina,sina,22
-sina,sina,12
-asa,sina,2
+sina,Sina,1373
 z,zz,12

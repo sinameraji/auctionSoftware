@@ -51,7 +51,7 @@ public class Bidder {
                 System.out.println("Sorry! You should be more punctual to enter a Japanese auction :) ");
                 canEnterAuction = false;
             }
-            if(dateNow.compareTo(deadline) < 0 && !auctionType.equalsIgnoreCase("japanese")){
+            else if(dateNow.compareTo(deadline) < 0 && !auctionType.equalsIgnoreCase("japanese")){
                     System.out.println("You have entered this auction. \nThe auction has already begun, but you can still set a bid now.");
                     canEnterAuction = true;
             }
