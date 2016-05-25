@@ -2,3 +2,4 @@ full name,username,password
 a123,Ahamad,1234
 sina,Sina,1373
 z,zz,12
+dani,dani,1234

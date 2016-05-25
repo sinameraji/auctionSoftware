@@ -31,43 +31,51 @@ public class tester {
         int role = 0;
         Login user = null;
         String username = null, pw, name = null;
-        System.out.println("\t\t\t▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼\t\t\t");
-        System.out.println("\t\t\tWelcome to E-Auction\t\t\t");
-        System.out.println("\t\t\t▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲\t\t\t");
+        System.out.println("         ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼");
+        System.out.println("         ◕‿◕｡ Welcome to E-Auction ◕‿◕｡ ");
+        System.out.println("         ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲");
         System.out.println("");
-        System.out.println("\t\tPlease log in or sign up to continue\t\t\t");
-        System.out.println("\t\tEnter 1 for Sign-up, 2 for Login.");
+        System.out.println("      ☾ Please log in or sign up to continue ☽");
+        System.out.println("☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕");
+        System.out.println("             Enter ➊ Sign-up ➋ Login.");
+        System.out.println("☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕☕");
         int select = input.nextInt();
         boolean pass = false;
         while(!pass){
             if(select == 2){
                 System.out.println("");
-                System.out.println("Are you Selling[1] or Bidding[2]?");
+                System.out.println("      ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈");
+                System.out.println("       Are you ➊ Selling or ➋ Bidding?");
+                System.out.println("      ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈");
                 role = input.nextInt();
-                System.out.print("Username ☞ ");
+                System.out.print("                    Username ☞ ");
                 username = input.next();
-                System.out.print("Password ☞ ");
+                System.out.print("                    Password ☞ ");
                 pw = input.next();
+                
+                        
                 pass = true;
 
                 user = new Login(username, pw, role); //users from seller and bidder class
             }
             else if(select == 1){
-                System.out.println("Are you a seller[1] or a buyer[2]?");
+                System.out.println("      ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈");
+                System.out.println("         Are you ➊ Seller or ➋ Buyer?");
+                System.out.println("      ◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈◈");
                 role = input.nextInt();
                 input.nextLine();
-                System.out.print("Name ☞ ");
+                System.out.print("                   Name ☞ ");
                 name = input.nextLine();
-                System.out.print("Username ☞ ");
+                System.out.print("                   Username ☞ ");
                 username = input.next();
-                System.out.print("Password ☞ ");
+                System.out.print("                   Password ☞ ");
                 pw = input.next();
                 pass = true;
                 Signup newUser = new Signup(name, username, pw, role);
 //                user = new Login(username, pw, role);
             }
             else{
-                System.out.println("Wrong entry.");
+                System.out.println("            ╰╯╭╮╰╯ Wrong entry ╰╯╭╮╰╯");
             }
         }
         
@@ -78,7 +86,7 @@ public class tester {
                     boolean quit = false;
                     Seller newSeller = new Seller(username);
                     while(!quit){
-                        System.out.println("Select action");
+                        System.out.println("                            ☾ Please select action ☽");
                         System.out.println(" ");
                         System.out.println("★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★");
                         System.out.println("➊ Add item ➋ Edit item ➌ Delete item ➍ Display item ➎ Display bids ➏ Display winner ➐ Back");
@@ -86,20 +94,20 @@ public class tester {
                         int choose = input.nextInt();
                         switch(choose){
                             case 1:
-                                System.out.print("Enter item to sell: ");
+                                System.out.print(" ☻ Please enter item to sell: ");
                                 String item = input.next();
                                 
-                                System.out.print("Starting date and time: ");
+                                System.out.print(" ☻ Starting date and time: ");
                                 Date date = new Date();
                                 String dateStart = dateFormat.format(date);
                                 
-                                System.out.print("enter price ");
+                                System.out.print(" ☻ Please enter starting price: ");
                                 double price = input.nextDouble();
                                 
-                                System.out.print("Enter deadline (dd/MM/yyyy HH:mm)");
+                                System.out.print(" ☻ Please enter deadline (dd/MM/yyyy HH:mm): ");
                                 String deadline = input.next();
                                 
-                                System.out.print("enter auction type ");
+                                System.out.print(" ☻ Please enter auction type: ");
                                 String auction = input.next();
                                 
                                 newSeller.addItem(item, dateStart, price, auction, deadline);
@@ -107,23 +115,23 @@ public class tester {
                                 
                             case 2:
                                 Seller.display();
-                                System.out.println("Enter the no of line you wish to edit: ");
+                                System.out.println(" ☻ Please enter the number of line you wish to edit: ");
                                 int num = input.nextInt();
                                 
-                                System.out.print("enter item to sell: ");
+                                System.out.print("   ☻ Please enter item to sell: ");
                                 item = input.next();
                                 
-                                System.out.print("Starting date and time:" );
+                                System.out.print("   ☻ Starting date and time:" );
                                 date = new Date();
                                 dateStart = dateFormat.format(date);
                                 
-                                System.out.println("enter the starting price: ");
+                                System.out.println(" ☻ Enter the starting price: ");
                                 price = input.nextDouble();
                                 
-                                System.out.print("enter the deadline (dd/MM/yyyy HH:mm) : ");
+                                System.out.print("   ☻ Please enter the deadline (dd/MM/yyyy HH:mm) : ");
                                 deadline = input.next();
                                 
-                                System.out.print("enter the auction type: ");
+                                System.out.print("   ☻ Please enter the auction type: ");
                                 auction = input.next();
                                 
                                 newSeller.edit(num, item, dateStart, price, auction, deadline);
@@ -132,7 +140,7 @@ public class tester {
                             case 3:
                                 newSeller.display(newSeller.sellerID);
                                 System.out.println("");
-                                System.out.print("enter no of line you wish to delete: ");
+                                System.out.print(" ☻ Please enter number of line you wish to delete: ");
                                 num = input.nextInt();
                                 newSeller.delete(num, newSeller.sellerID);
                                 break;
@@ -146,7 +154,10 @@ public class tester {
                                 break;
                                 
                             case 6:
-                                System.out.print("Winner of the following auction: ");
+                                System.out.println("♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ");
+                                System.out.print("   Winner of the following auction: ");
+                                System.out.println("♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ♕ ");
+                                
                                 //Auction.winner();
                                 
                             case 7:
@@ -154,7 +165,7 @@ public class tester {
                                 break;
                                 
                             default:
-                                System.out.println("invalid key");
+                                System.out.println("☹☹☹ Sorry, you entered an invalid key ☹☹☹ ");
                         }
                         
                     }         break;
@@ -165,11 +176,11 @@ public class tester {
                     boolean quit = false;
                     Bidder newBidder = new Bidder(username);
                     while(!quit){
-                        System.out.println("Select action");
+                        System.out.println("          ☾ Please select action ☽");
                         System.out.println(" ");
-                        System.out.println("★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★");
-                        System.out.println("1) display, 2)bid on items, 3)back");
-                        System.out.println("★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★");
+                        System.out.println("      ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★");
+                        System.out.println("            ➊ Display ➋ Bid ➌ Back       ");
+                        System.out.println("      ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★");
                         
                         int choose = input.nextInt();
                         input.nextLine();
@@ -181,11 +192,11 @@ public class tester {
                             case 2:
                                 Seller.display();//from seller text file
                                 
-                                System.out.println("input the ID of the item");
+                                System.out.println("  ◆ Please input the ID of the item: ");
                                 String itemID = input.nextLine();
                                 newBidder.enterAuction(itemID);
                                 if(newBidder.canEnterAuction){
-                                    System.out.println("Enter bidding price: ");
+                                    System.out.println("◆ Please enter bidding price: ");
                                     double bidAmount = input.nextDouble();
                                     newBidder.bid(itemID, bidAmount);//bidder class
                                 }
@@ -196,14 +207,13 @@ public class tester {
                                 break;
                                 
                             default:
-                                System.out.println("invalid key");
+                                System.out.println("☹☹☹ Sorry, you entered an invalid key ☹☹☹");
                         }
                     } 
                     break;
                 }
             default:
-                System.out.println("you need to sign up to access the system");
+                System.out.println("✿ You need to sign up to gain access the system ✿ ");
                 break;
-        }
-    }
+        }    }
 }
