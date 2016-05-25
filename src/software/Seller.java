@@ -71,20 +71,26 @@ public class Seller {
         System.out.println("edit is successful");
     }
     
-    public void delete(int lineNo){
+    public void delete(int lineNo, String sellerID){
         
-        ArrayList<String[]> array = newArray("seller.txt");
-        array.remove(lineNo-1);
+        ArrayList<String[]> allItems = newArray("seller.txt");
+        ArrayList<String[]> sellerItems = new ArrayList<>();
+        for(int i = 0; i < allItems.size(); i++){
+            if(allItems.get(i)[allItems.get(i).length - 1].equalsIgnoreCase(sellerID)){
+                    sellerItems.add(allItems.get(i));
+                }
+        }
+        sellerItems.remove(lineNo-1);
         try{
             PrintWriter output = new PrintWriter(new FileOutputStream("seller.txt"));
             
-             for(int i = 0; i<array.size(); i++){
-                for(int j = 0; j<array.get(i).length; j++){
+             for(int i = 0; i<sellerItems.size(); i++){
+                for(int j = 0; j<sellerItems.get(i).length; j++){
                     
                     if(j != 1)
-                        output.print(array.get(i)[j] + ",");
+                        output.print(sellerItems.get(i)[j] + ",");
                     else
-                        output.print(array.get(i)[j]);
+                        output.print(sellerItems.get(i)[j]);
 
                 }
             }
@@ -230,7 +236,7 @@ public class Seller {
         }
         for(int i = 0; i < sellerItems.size(); i++){
             for(int j = 0; j < sellerItems.get(i).length; j++){
-                System.out.print(sellerItems.get(i)[j]);
+                System.out.print(sellerItems.get(i)[j]+ "\t");
             }
             System.out.println("");
         }

@@ -134,7 +134,7 @@ public class tester {
                                 System.out.println("");
                                 System.out.print("enter no of line you wish to delete: ");
                                 num = input.nextInt();
-                                newSeller.delete(num);
+                                newSeller.delete(num, newSeller.sellerID);
                                 break;
                                 
                             case 4:
